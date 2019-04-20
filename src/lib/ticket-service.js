@@ -1,6 +1,6 @@
 import axios from "axios";
 
-class Auth {
+class Ticket {
   constructor() {
     this.auth = axios.create({
       baseURL: "http://localhost:5000",
@@ -8,29 +8,33 @@ class Auth {
     });
   }
 
-  signup(user) {
+  create(user) {
     const { username, password } = user;
     return this.auth
       .post("/auth/signup", { username, password })
       .then(({ data }) => data);
   }
 
-  login(user) {
+  read(user) {
     const { username, password } = user;
     return this.auth
       .post("/auth/login", { username, password })
       .then(({ data }) => data);
   }
 
-  logout() {
-    return this.auth.post("/auth/logout", {}).then(response => response.data);
+  update() {
+    return this.auth
+    .post("/auth/logout", {})
+    .then(response => response.data);
   }
 
-  me() {
-    return this.auth.get("/auth/me").then(response => response.data);
+  delete() {
+    return this.auth
+    .get("/auth/me")
+    .then(response => response.data);
   }
 }
 
-const auth = new Auth();
+const ticket = new Ticket();
 
-export default auth;
+export default ticket;
