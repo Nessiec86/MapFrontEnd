@@ -17,13 +17,15 @@ class Auth {
 
   login(user) {
     const { username, password } = user;
-    return this.auth
+      return this.auth
       .post("/auth/login", { username, password })
       .then(({ data }) => data);
   }
 
   logout() {
+    this.auth.get("/auth/logout", {} )
     return this.auth.post("/auth/logout", {}).then(response => response.data);
+
   }
 
   me() {

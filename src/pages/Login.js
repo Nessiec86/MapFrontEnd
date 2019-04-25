@@ -13,6 +13,7 @@ class Login extends Component {
     this.props.login({ username, password });
   };
 
+  
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -40,6 +41,7 @@ class Login extends Component {
       </form>
     );
   }
+
 }
 
 export default withAuth(Login);

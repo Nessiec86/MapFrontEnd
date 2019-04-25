@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+
+
 class Navbar extends Component {
   render() {
     const { user, logout, isLoggedin } = this.props;
@@ -8,13 +9,17 @@ class Navbar extends Component {
       <div>
         {isLoggedin ? (
           <>
-            <p>username: {user.username}</p>
-            <button onClick={logout}>Logout</button>
+          <nav>
+            <div>
+              <p>Welcome {user.username}</p>
+            </div>
+            <div>
+              <button onClick={logout}>Logout</button>
+            </div>
+          </nav>
           </>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
           </>
         )}
       </div>
