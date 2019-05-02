@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import TicketService from "../lib/ticket-service";
 import Navbar from "../components/Navbar";
+import TicketService from "../lib/ticket-service";
 
 class Tickets extends Component {
     state = {
         list: {},
         status: "loading"
     }
+    
     componentDidMount(){
-        TicketService.read()
+        
+        TicketService.joined()
             .then((list) => {
                 this.setState({
                     list,
@@ -18,33 +20,29 @@ class Tickets extends Component {
             })
             .catch(error => {
                 console.log("error", error);
+                
                 this.setState({
                     status: "error"
             });
         });
     }
-    handleSelect () {
-        TicketService.join()
-    }
-        
+    
     render() {
+        
         switch (this.state.status) {
             case "loading":
-              return "loading...";
+            return "loading...";
             case "loaded":
-              return (
-                  <div className="App">
+            return (
+                <div className="App">
                     <Navbar/>
-                    <h1>tickets</h1>
+                    <h1>MyTickets</h1>
                     {this.state.list.map(list => {
-                    return  <li key={list.tkName}>{list.tkName}
-                            <img src={list.tkImage} alt="Tk"></img>
-                            <button onClick={this.handleSelect}>Select</button>
-                            </li>
-                    },)}
+                        return <li key={list.tkName}>{list.tkName}<img src={list.tkImage} alt="Tk"></img></li>;
+                    })}
                 </div>
                 );
-            case "error":
+                case "error":
               return "error!!!! ";
             default:
               break;

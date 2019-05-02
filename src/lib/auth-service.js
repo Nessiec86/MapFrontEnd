@@ -4,6 +4,7 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_PUBLIC_DOMAIN,
+      //baseURL: "http://localhost:5000",
       withCredentials: true
     });
   }
@@ -23,7 +24,7 @@ class Auth {
   }
 
   logout() {
-    this.auth.get("/auth/logout", {} )
+    this.auth.get("/auth/logout", {})
     return this.auth.post("/auth/logout", {}).then(response => response.data);
 
   }
