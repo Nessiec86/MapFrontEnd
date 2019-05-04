@@ -10,14 +10,20 @@
 
 body {
     background-color: whitesmoke;
-    width: 90%;
     margin: 0 auto;
     font-family: CircularStd;
 }
-/* button {
-    
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.Navbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin: 10rem 0 0 0;
+}
 
-} */
 button a {
     text-decoration: none;
     font-family: CircularStd;
@@ -31,15 +37,14 @@ button a {
   
 }
 
-h1 {
-  font-family: CircularStd;
-  font-size: 3rem;
-  font-weight: 500;
-  font-style: italic;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.7px;
-  color: #e30b4c;
+.logo {
+  display: flex;
+  margin: 4rem 0 0 1rem;
+}
+.logo img{
+  width: 12rem;
+  height: 2rem;
+  object-fit: contain;
 
 }
 
@@ -49,18 +54,40 @@ h1 {
   flex-direction: row;
   padding: 28rem 0 0 0;
 }
+.btn-signup {
+  display: flex;
+  justify-content: flex-end;
+}
+.btn-signup input{
+  font-family: CircularStd;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  color: #e30b4c;
+}
 
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 1rem 0 0 0;
 }
 
 .sign_profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
   width: 15rem;
-  height: 10rem;
+  height: 8rem;
   border: 2px solid #e30b4c;
   margin: 5rem auto;
+  box-shadow: 0 17px 13px -5px rgba(252, 128, 143, 0.23);
+  background-color: #f6f6f7;
+
 }
 .line {
   width: 100%;
@@ -83,4 +110,92 @@ nav {
 .not {
   width: 100%;
   margin: 5rem auto;
+}
+
+.home-background {
+  position: absolute;
+  
+    width: 100%;
+    height: 454px;
+    opacity: 0.91;
+    background-image: linear-gradient(to top, #364b63, #567aa4);
+  
+}
+.home-background h1 {
+  width: 222px;
+  height: 78px;
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.07;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+
+}
+.home-background p {
+  width: 222px;
+  height: 48px;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+}
+
+.ticket-background {
+  width: 360px;
+  height: 239px;
+  box-shadow: 0 0 28px 7px rgba(246, 246, 247, 0.3);
+  background-image: radial-gradient(circle at 146% 81%, #76d1ed, #fc808f 66%, #e93a76);
+  display: flex;
+  position: relative;
+  margin: 20rem auto 0 auto;
+}
+.ticket-background img {
+  width: 100%;
+  opacity: 0.5;
+ }
+.ticket-config {
+  margin: 13rem auto 0 auto;
+  width: 280px;
+  height: 48px;
+  box-shadow: 0 17px 17px 0 rgba(252, 128, 143, 0.23);
+  background-color: #e30b4c;
+}
+.ticket-name {
+  position: absolute;
+  margin: 13rem auto 0 auto;
+  width: 280px;
+  height: 48px;
+  box-shadow: 0 17px 17px 0 rgba(252, 128, 143, 0.23);
+  background-color: #e30b4c;
+}
+.edit {
+  position: absolute;
+  margin: 15rem 0 0 20rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-radius: 50%;
+  box-shadow: 0 10px 10px 0 rgba(98, 120, 150, 0.35);
+  background-color: #ffffff;
+
+}
+.ticket-btn button {
+  width: 100%;
+  height: 100%;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  text-align: center;
+  color: #ffffff;
 }

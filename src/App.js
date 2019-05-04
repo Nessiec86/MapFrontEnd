@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Tickets from "./pages/Tickets";
 import MyTickets from "./pages/MyTickets";
 import NotFound from "./components/NotFound";
+import Config from "./pages/Config";
 
 class App extends Component {
       
@@ -23,7 +24,7 @@ class App extends Component {
             <PrivateRoute exact path="/private" component={Private} />
             <PrivateRoute exact path="/tickets" component={Tickets} />
             <PrivateRoute exact path="/MyTickets" component={MyTickets} />
-            
+            <PrivateRoute exact path="/Config" component={Config}/>
             <Route path='*' exact={true} component={NotFound} />
         </Switch>
       </AuthProvider>

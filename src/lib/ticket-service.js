@@ -24,17 +24,21 @@ class Ticket {
     return this.Ticket
       .get("/tickets/list/:id")
       .then(({ data }) => data);
-  }  
-  join () {
+  }
+
+  join (ticketId) {
+  console.log(ticketId)
+  console.log("estoy en join")
+
     return this.Ticket
-      .put("/tickets/list/:id")
+      .put(`tickets/list/${ticketId}`)
       .then(({ data }) => data);
   }
   
   joined () {
-    console.log(this.Ticket)
+    
     return this.Ticket
-      .get("/tickets/joined")
+    .get("/tickets/joined")
       .then(({ data }) => data);
   }
 }

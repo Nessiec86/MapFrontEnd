@@ -15,8 +15,8 @@ class Home extends Component {
             </>
             ) : (
             <>
-            <div className="container">
-                <h1>SMAR-T</h1>
+            <div className="logo">
+                <img src="../Images/logo@2x.png" alt="logo"></img>
             </div>
             <div className="buttons">
                 <button><Link to="/login">LOG IN</Link></button>

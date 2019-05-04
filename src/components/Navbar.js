@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
- 
+import { withRouter } from "react-router-dom";
 
 class Navbar extends Component {
   
+  
   handleReturn () {
-    console.log(this.props)
+    console.log(this.props.history.goBack)
     this.props.history.goBack();
   }
 
+  
   render() {
-    console.log(this.props)
     
     const { user, logout, isLoggedin } = this.props;
     return (
-      
-      <div>
+      <div className="Navbar">
         {isLoggedin ? (
           <>
           <nav>
@@ -35,8 +35,9 @@ class Navbar extends Component {
           </>
         )}
       </div>
+      
     );
   }
 }
 
-export default withAuth(Navbar);
+export default withRouter(withAuth(Navbar));

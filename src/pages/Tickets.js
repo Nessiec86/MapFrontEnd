@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 
 class Tickets extends Component {
     state = {
-        list: {},
+        list: [],
         status: "loading"
     }
     componentDidMount(){
@@ -23,8 +23,11 @@ class Tickets extends Component {
             });
         });
     }
-    handleSelect () {
-        TicketService.join()
+    handleSelect = (ticketId) => {
+
+        console.log(ticketId)
+        TicketService.join(ticketId)
+        this.props.history.push("/private")
     }
         
     render() {
@@ -34,22 +37,22 @@ class Tickets extends Component {
             case "loaded":
               return (
                   <div className="App">
-                    <Navbar/>
                     <h1>tickets</h1>
                     {this.state.list.map(list => {
-                    return  <li key={list.tkName}>{list.tkName}
+                        return  <li key={list.tkName}>{list.tkName}
                             <img src={list.tkImage} alt="Tk"></img>
-                            <button onClick={this.handleSelect}>Select</button>
+                            <button onClick={() => this.handleSelect(list._id)}>Select</button>
                             </li>
                     },)}
+                <Navbar/>
                 </div>
                 );
-            case "error":
-              return "error!!!! ";
-            default:
-              break;
+                case "error":
+                return "error!!!! ";
+                default:
+                break;
+            }
         }
-    }
 }
 
 export default withAuth(Tickets);

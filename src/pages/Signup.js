@@ -25,11 +25,13 @@ class Signup extends Component {
     const { username, surname, password } = this.state;
     return (
       <>
-      <h2>Sign up with e-mail</h2>
+      <h2>Sign up</h2>
       <div className="sign_profile">
-        <p>{this.state.username}</p>
-        <p>{this.state.surname}</p>
-        <p>{this.state.password}</p>
+        <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
+        <div>
+          <p>{this.state.username}</p>
+          <p>{this.state.surname}</p>
+        </div>
       </div>
       <div>
         <form onSubmit={this.handleFormSubmit}>
@@ -63,7 +65,9 @@ class Signup extends Component {
               />
               <div className="line"></div>
           </div>
-          <input type="submit" value="Signup" />
+          <div className="btn-signup">
+          <input type="submit" value="NEXT" />
+          </div>
         </form>
         <p>
           Already have account?
