@@ -15,15 +15,13 @@ componentDidMount(){
     
     TicketService.joined()
         .then((list) => {
-          console.log("estoy en render")
-            this.setState({
-                list,
-                status: "loaded"
-            });
+          this.setState({
+            list,
+            status: "loaded"
+          });
         })
         .catch(error => {
             console.log("error", error);
-            
             this.setState({
                 status: "error"
         });
@@ -36,42 +34,37 @@ componentDidMount(){
       <div className="container">
         {myTickets.length > 0 ? (
           <>
-              <div className="home-background">
-                <h1>Welcome {this.props.user.username}!</h1>
-              </div>
+            <div className="home-background">
+              <h1>Welcome {this.props.user.username}!</h1>
+            </div>
               {list && list.map(list => {
-                console.log(list)
-                    return  <li key={list.tkName}>
-                              {/* <div className="ticket-name">
-                                <p>{list.tkName}</p>
-                              </div> */}
-                              <div className="edit">
-                              
-                              </div>
-                              <div className="ticket-background">
-                                <img src={list.tkImage} alt="Tk"></img>
-                              </div>
-                              
-                            </li>
-                    },)}
-              
-            </>
-            ) : (
-            <>
-              <div className="home-background">
-                <h1>Welcome {this.props.user.username}!</h1>
-                <p>Configure your fare and payment method.</p>
+                return  <li key={list.tkName}>
+                  {/* <div className="ticket-name">
+                    <p>{list.tkName}</p>
+                    </div> */}
+                    <div className="edit">
+                    </div>
+                    <div className="ticket-background">
+                      <img src={list.tkImage} alt="Tk"></img>
+                    </div>
+              </li>
+        },)}
+          </>
+          ) : (
+          <>
+            <div className="home-background">
+              <h1>Welcome {this.props.user.username}!</h1>
+              <p>Configure your fare and payment method.</p>
+            </div>
+            <div className="ticket-background">
+              <div className="ticket-config">
+                <Link to="/Config/" >Configure</Link>
               </div>
-              <div className="ticket-background">
-                <div className="ticket-config">
-                  <Link to="/Config/" >Configure</Link>
-                </div>
-              </div>
-            </>
+            </div>
+          </>
           )}
       <Navbar/>
       </div>
-        
     );
   }
 }
