@@ -10,19 +10,19 @@ class Ticket {
 
   create () {
     return this.Ticket
-      .post("/tickets/new")
+      .post("tickets/new")
       .then(({ data }) => data);
   }
   read () {
     // const { tkName, tkImage } = ticket;
     return this.Ticket
-      .get("/tickets/list")
+      .get("tickets/list")
       .then(({ data }) => data);
     }
   
   ticket () {
     return this.Ticket
-      .get("/tickets/list/:id")
+      .get("tickets/list/:id")
       .then(({ data }) => data);
   }
 
@@ -38,7 +38,7 @@ class Ticket {
   joined () {
     
     return this.Ticket
-    .get("/tickets/joined")
+    .get("tickets/joined")
       .then(({ data }) => data);
   }
 }

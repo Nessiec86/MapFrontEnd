@@ -11,6 +11,7 @@ import Tickets from "./pages/Tickets";
 import MyTickets from "./pages/MyTickets";
 import NotFound from "./components/NotFound";
 import Config from "./pages/Config";
+import  "./App.css";
 
 class App extends Component {
       
@@ -26,6 +27,7 @@ class App extends Component {
             <PrivateRoute exact path="/MyTickets" component={MyTickets} />
             <PrivateRoute exact path="/Config" component={Config}/>
             <Route path='*' exact={true} component={NotFound} />
+            
         </Switch>
       </AuthProvider>
     );
