@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import auth from "./auth-service";
+import LoadingDots  from "../components/LoadingDots";
+
 const { Consumer, Provider } = React.createContext();
 
 export { Consumer };
@@ -97,7 +99,7 @@ class AuthProvider extends Component {
   render() {
     const { isLoading, isLoggedin, user } = this.state;
     return isLoading ? (
-      <div>Loading</div>
+      <LoadingDots/> 
     ) : (
       <Provider
         value={{

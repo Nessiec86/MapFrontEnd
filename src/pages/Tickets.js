@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import TicketService from "../lib/ticket-service";
 import Navbar from "../components/Navbar";
+import LoadingDots  from "../components/LoadingDots";
 
 class Tickets extends Component {
     state = {
@@ -22,10 +23,9 @@ class Tickets extends Component {
                     status: "error"
             });
         });
+        
     }
     handleSelect = (ticketId) => {
-
-        console.log(ticketId)
         TicketService.join(ticketId)
         this.props.history.push("/private")
     }
@@ -33,26 +33,30 @@ class Tickets extends Component {
     render() {
         switch (this.state.status) {
             case "loading":
-              return "loading...";
+              return <LoadingDots/>;
             case "loaded":
               return (
                   <div className="App">
-                    <h1>tickets</h1>
+                    <h1>Select your fare</h1>
+                    <section className="card">
                     {this.state.list.map(list => {
-                        return  <li key={list.tkName}>{list.tkName}
+                        return <div className="card--content">
+                          <li key={list.tkName}>{list.tkName}
                             <img src={list.tkImage} alt="Tk"></img>
                             <button onClick={() => this.handleSelect(list._id)}>Select</button>
                             </li>
+                            </div>
                     },)}
+                    </section>
                 <Navbar/>
                 </div>
                 );
-                case "error":
+            case "error":
                 return "error!!!! ";
-                default:
+            default:
                 break;
-            }
         }
+    }
 }
 
 export default withAuth(Tickets);

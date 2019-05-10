@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Navbar from "../components/Navbar";
 import TicketService from "../lib/ticket-service";
+import LoadingDots  from "../components/LoadingDots";
 
 class Tickets extends Component {
     state = {
@@ -31,7 +32,7 @@ class Tickets extends Component {
         
         switch (this.state.status) {
             case "loading":
-            return "loading...";
+            return <LoadingDots/>;
             case "loaded":
             return (
                 <div className="App">
