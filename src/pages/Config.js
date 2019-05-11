@@ -4,12 +4,16 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 
-class Private extends Component {
+class Config extends Component {
+
+  
+
   render() {
+    console.log(this.props)
     return (
       <div className="container">
           <div>
-          <Link to="/tickets/" >Tickets</Link>
+            <Link to="/tickets/" >Tickets</Link>
           </div>
           <div>
         <Link to="/MyTickets/" >MyTickets</Link>
@@ -22,4 +26,4 @@ class Private extends Component {
   }
 }
 
-export default withAuth(Private);
+export default withAuth(Config);

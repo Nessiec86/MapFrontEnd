@@ -49,7 +49,6 @@ class Private extends Component {
       <WithTicket with tickeys tickets={ list } usertickets={ user } />
       :
       <WhithoutTicket sin tickets />
-
   }
 }
 

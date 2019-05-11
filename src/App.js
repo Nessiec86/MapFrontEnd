@@ -8,6 +8,7 @@ import Private from "./pages/Private";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Tickets from "./pages/Tickets";
+import Payment from "./pages/Payment";
 import Edit from "./pages/Edit";
 import MyTickets from "./pages/MyTickets";
 import NotFound from "./components/NotFound";
@@ -25,6 +26,7 @@ class App extends Component {
             <AnonRoute exact path="/signup" component={Signup} />
             <PrivateRoute exact path="/private" component={Private} />
             <PrivateRoute exact path="/tickets" component={Tickets} />
+            <PrivateRoute exact path="/tickets/pay" component={Payment} />
             <PrivateRoute exact path="/tickets/edit" component={Edit} />
             <PrivateRoute exact path="/MyTickets" component={MyTickets} />
             <PrivateRoute exact path="/Config" component={Config}/>

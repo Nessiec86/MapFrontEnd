@@ -25,7 +25,9 @@ class Auth {
 
   logout() {
     // this.auth.get("/auth/logout", {})
-    return this.auth.post("/auth/logout", {}).then(response => response.data);
+    return this.auth
+      .post("/auth/logout", {})
+      .then(response => response.data);
 
   }
 

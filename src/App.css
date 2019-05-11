@@ -16,14 +16,19 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  
+}
+
+.container-sesion {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
 .Navbar {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin: 10rem 0 0 0;
+  margin: 6rem 0 0 0;
 }
 
 button a {
@@ -53,7 +58,7 @@ button a {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  padding: 28rem 0 0 0;
+  padding: 4rem 0 0 0;
 }
 
 .btn-signup {
@@ -62,6 +67,16 @@ button a {
 }
 
 .btn-signup input{
+  font-family: CircularStd;
+  font-size: 1rem;
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  color: #e30b4c;
+}
+
+.btn-signup button{
   font-family: CircularStd;
   font-size: 1rem;
   font-weight: 500;
@@ -103,10 +118,51 @@ nav {
   flex-direction: column;
   margin: 2rem 0;
 }
+.sign p {
+  width: 116px;
+  height: 20px;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e30b4c;
+}
+
 
 .sign input {
   background-color: transparent;
   border: none;
+}
+
+.sign-ccv {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+
+}
+
+.sign-ccv p {
+  width: 116px;
+  height: 20px;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #e30b4c;
+}
+
+.sign-input-ccv {
+  width: 25%;
+  height: 2rem;
+  background-color: rgba(240, 81, 110, 0.23);
+  font-size: 2rem;
 }
 
 .not {
@@ -122,7 +178,15 @@ nav {
   background-image: linear-gradient(to top, #364b63, #567aa4);
 }
 
+.home-background img {
+  width: 100%;
+  position: absolute;
+  object-fit: contain;
+}
+
 .home-background h1 {
+  position: absolute;
+  margin: 5rem 1rem;
   width: 222px;
   height: 78px;
   font-family: CircularStd;
@@ -136,6 +200,8 @@ nav {
 }
 
 .home-background p {
+  position: relative;
+  margin: 9rem 1rem;
   width: 222px;
   height: 48px;
   font-family: CircularStd;
@@ -155,12 +221,12 @@ nav {
   background-image: radial-gradient(circle at 146% 81%, #76d1ed, #fc808f 66%, #e93a76);
   display: flex;
   position: relative;
-  margin: 11rem auto 0 auto;
+  margin: 16rem auto 0 auto;
 }
 
 .ticket-background img {
   width: 100%;
-  opacity: 0.5;
+  position: absolute;
 }
  
 .ticket-background-ok {
@@ -169,7 +235,7 @@ nav {
   box-shadow: 0 0 28px 7px rgba(246, 246, 247, 0.3);
   display: flex;
   position: relative;
-  margin: 11rem auto 0 auto;
+  margin: 15rem auto 0 auto;
 
 }
 .ticket-background-ok img {
@@ -186,6 +252,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .ticket-config a {
@@ -242,7 +309,6 @@ nav {
 
 /* Scroll*/
 .card {
-  
   display: flex;
   width: 321px;
   height: 22rem;
@@ -259,6 +325,31 @@ nav {
 .card--content {
   padding: 0 3rem;
   border: solid white 5px;
+}
+
+/*Scroll Logo*/
+.card-logo {
+  margin: 3rem 0;
+  display: flex;
+  width: 321px;
+  height: 22rem;
+  background-color: #ececf2;
+  min-width: 100%;
+  min-height: 200px;
+  overflow-x: auto;
+}
+
+.card-logo::-webkit-scrollbar {
+  display: none;
+}
+
+.card--content-logo {
+  border: solid whitesmoke 5px;
+}
+.card--content-logo img {
+  width: 327px;
+  height: 408px;
+  object-fit: contain;
 }
 
 .App h1{

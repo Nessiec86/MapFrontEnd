@@ -10,6 +10,7 @@ class WithTicket extends Component {
         return (
             <div className="container">
                 <div className="home-background">
+                    <img src="../Images/bg-image@3x.jpg" alt="bcn" />
                     <h1>Welcome {this.props.user.username}!</h1>
                 </div>
                 {list && list.map(list => {
@@ -20,7 +21,7 @@ class WithTicket extends Component {
                                         state: { 
                                         list,
                                         }}}>
-                                        <img src="./Images/pencil-alt-solid.svg" alt="pencil"></img>
+                                        <img src="../Images/pencil-alt-solid.svg" alt="pencil"/>
                                     </Link>
                                 </div>
                                 <div className="ticket-background-ok">

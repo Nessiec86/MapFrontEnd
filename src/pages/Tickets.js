@@ -4,6 +4,7 @@ import TicketService from "../lib/ticket-service";
 import Navbar from "../components/Navbar";
 import LoadingDots  from "../components/LoadingDots";
 
+
 class Tickets extends Component {
     state = {
         list: [],
@@ -27,7 +28,7 @@ class Tickets extends Component {
     }
     handleSelect = (ticketId) => {
         TicketService.join(ticketId)
-        this.props.history.push("/private")
+        this.props.history.push("/tickets/pay")
     }
         
     render() {
