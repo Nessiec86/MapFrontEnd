@@ -11,21 +11,16 @@ class Edit extends Component {
     }
     
 
-    // handleUpdate(){
-
-    // }
-
-
     render() {
     const list = [this.props.location.state.list];
     
     return (
-        <div className="container">
+        <div className="myContainer">
             <div className="home-background">
+                <img src="../Images/bg-image@3x.jpg" alt="bcn" />
                 <h1>Your Smar-T</h1>
             </div>
                 {list && list.map(list => {
-                       
                     return  <li key={list}>
                         <div className="edit">
                             <img src="../Images/trash-alt-solid.svg" alt="trash" onClick={() => this.handleDelete(list._id)}></img>

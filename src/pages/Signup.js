@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import { Link } from "react-router-dom";
+import SignupForm from "../components/SignupForm";
 
 class Signup extends Component {
   state = {
@@ -21,9 +22,11 @@ class Signup extends Component {
   };
 
   render() {
-    const { username, surname, password } = this.state;
+    
     return (
-      <div className="container-sesion">
+      <>
+      <SignupForm/>
+      {/* <div className="myContainer-sesion">
         <h2>Sign up</h2>
         <div className="sign_profile">
           <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
@@ -73,9 +76,13 @@ class Signup extends Component {
             <button><Link to={"/login"}>Login</Link></button>
           </p>
         </div>
-      </div>
+      </div> */}
+      </>
     );
   }
 }
 
 export default withAuth(Signup);
+
+
+

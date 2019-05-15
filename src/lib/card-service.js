@@ -9,18 +9,30 @@ class Card {
   }
 
   create (card) {
-    const { cardname, cardnum, vadil, controlnum } = card;
-    console.log(card)
+    const { cardname, cardnum, vadil, controlnum, userId } = card;
     return this.Card
-      .post("tickets/pay", { cardname, cardnum, vadil, controlnum })
+      .post("profile/pay", { cardname, cardnum, vadil, controlnum, userId })
       .then(({ data }) => data);
   }
   read () {
     return this.Card
-    .get("private/profile")
+    .get("profile/card")
     .then(({ data }) => data);
   }
+  // join (cardId) {
+  //   return this.Card
+  //   .put(`profile/pay/${cardId}`)
+  //   .then(({ data }) => data);
+  // }
 
+  // myCards () {
+  //  return this.Card
+  //   .get("profile/mycards")
+  //   .then(({data}) => data);
+  // }
+
+  
+  
   delete () {
     return this.Card
       .post(`tickets/edit/`)

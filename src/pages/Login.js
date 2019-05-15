@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
+import LoginForm from "../components/LoginForm";
 
 class Login extends Component {
   state = {
@@ -22,7 +23,9 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="container-sesion">
+      <>
+      <LoginForm/>
+      {/* <div className="myContainer-sesion">
         <h2>Login</h2>
         <div className="sign_profile">
           <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
@@ -55,9 +58,10 @@ class Login extends Component {
         <div className="btn-signup">
           <input type="submit" value="LOGIN" />
         </div>
-        {/* <input type="submit" value="Login" /> */}
+        <input type="submit" value="Login" />
       </form>
-    </div>
+    </div> */}
+    </>
     );
   }
 

@@ -8,7 +8,7 @@ class WithTicket extends Component {
         const list = this.props.tickets;
         
         return (
-            <div className="container">
+            <div className="myContainer">
                 <div className="home-background">
                     <img src="../Images/bg-image@3x.jpg" alt="bcn" />
                     <h1>Welcome {this.props.user.username}!</h1>

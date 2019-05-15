@@ -12,7 +12,6 @@ class Payment extends Component {
       };
 
       handleSelect (state) {
-        console.log('hola')
         const { cardname, cardnum, vadil, controlnum } = state;
         Card.create({ cardname, cardnum, vadil, controlnum });
         this.props.history.push("/private")
@@ -20,10 +19,9 @@ class Payment extends Component {
         
       }
       handleFormSubmit = event => {
-        
         event.preventDefault();
-        const { cardname, cardnum, vadil, controlnum } = this.state;
-        Card.create({ cardname, cardnum, vadil, controlnum });
+        const { cardname, cardnum, vadil, controlnum, userId } = this.state;
+        Card.create({ cardname, cardnum, vadil, controlnum, userId });
         this.props.history.push("/private")
     
       };
@@ -35,12 +33,26 @@ class Payment extends Component {
     
 
   render() {
+      const ticket = this.props.location.state.list 
       const { cardname, cardnum, vadil, controlnum } = this.state;
       return (
         <>
-      <div className="container-sesion">
+      <div className="myContainer-sesion">
+        <h1>Well done!</h1>
+            <div className="tk-info">
+                <img src={ticket.tkImage} alt="ticket"></img>
+                <div>
+                    <p>{ticket.tkName}</p>
+                    <p>{ticket.tkZones}Zone</p>
+                    <p>{ticket.tkPrice}€</p>
+                    
+                </div>
+        
+            </div>
+                <div className="line-grey"></div>
             <div>
-                <h1>Check card information</h1>
+                <h1>Configure your payment method</h1>
+                <p>We will renovate automatically your ticket when it is over. You can change your fare & payment method whenever you want or unsuscribe</p>
             </div>
             <div className="sign">
                 <label>Cardholder name:</label>

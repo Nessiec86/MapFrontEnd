@@ -4,15 +4,14 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: process.env.REACT_APP_PUBLIC_DOMAIN,
-      //baseURL: "http://localhost:5000",
       withCredentials: true
     });
   }
 
   signup(user) {
-    const { username, password } = user;
+    const { username, surname, password } = user;
     return this.auth
-      .post("/auth/signup", { username, password })
+      .post("/auth/signup", { username, surname, password })
       .then(({ data }) => data);
   }
 

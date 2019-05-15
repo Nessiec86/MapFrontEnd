@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class WhithoutTicket extends Component  {
   render () {
     return (
-      <div className="container">
+      <div className="myContainer">
         <div className="home-background">
           <img src="../Images/bg-image@3x.jpg" alt="bcn"></img>
           <h1>Welcome {this.props.user.username}!</h1>
@@ -15,7 +15,7 @@ class WhithoutTicket extends Component  {
         <div className="ticket-background">
           <img src="../Images/tickets-no-fare@3x.png" alt="Ticket"></img>
           <div className="ticket-config">
-            <Link to="/Config/" component={Navbar} eeeee={this.props}>CONFIGURE</Link>
+            <Link to="/Config/" >CONFIGURE</Link>
           </div>
         </div>
         <Navbar/>
@@ -23,6 +23,5 @@ class WhithoutTicket extends Component  {
     )
   }
 }
-
 
 export default withAuth(WhithoutTicket);

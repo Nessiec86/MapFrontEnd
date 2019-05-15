@@ -11,7 +11,7 @@ class Navbar extends Component {
     this.props.history.goBack();
   }
 
-
+  
   
   render() {
     
@@ -26,10 +26,16 @@ class Navbar extends Component {
               {/* <button onClick={this.handleReturn}>Return</button> */}
           </div>
             <div>
-              <Link to="/MyTickets/" >
+              <Link to="/Private/" >
                 <img src="../Images/mysmar-t@3x.png" alt="my smar-t" style={{width: '3rem'}}></img>  
               </Link>
             </div>
+            <div>
+              <Link to="/Profile/" >
+                <img src="../Images/account@3x.png" alt="my smar-t" style={{width: '3rem'}}></img>  
+              </Link>
+            </div>
+            
             <div>
               <button onClick={logout}>Logout</button>
             </div>

@@ -11,7 +11,7 @@ class Config extends Component {
   render() {
     console.log(this.props)
     return (
-      <div className="container">
+      <div className="myContainer">
           <div>
             <Link to="/tickets/" >Tickets</Link>
           </div>

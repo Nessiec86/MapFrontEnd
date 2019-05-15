@@ -3,6 +3,8 @@ import { withAuth } from "../lib/AuthProvider";
 import TicketService from "../lib/ticket-service";
 import Navbar from "../components/Navbar";
 import LoadingDots  from "../components/LoadingDots";
+import Payment from "../pages/Payment";
+import { Link } from "react-router-dom";
 
 
 class Tickets extends Component {
@@ -28,7 +30,7 @@ class Tickets extends Component {
     }
     handleSelect = (ticketId) => {
         TicketService.join(ticketId)
-        this.props.history.push("/tickets/pay")
+        // this.props.history.push("/tickets/pay",)
     }
         
     render() {
@@ -37,14 +39,20 @@ class Tickets extends Component {
               return <LoadingDots/>;
             case "loaded":
               return (
-                  <div className="App">
+                  <div className="myContainer">
                     <h1>Select your fare</h1>
-                    <section className="card">
+                    <section className="cards">
                     {this.state.list.map(list => {
-                        return <div className="card--content">
+                        return <div className="cards--content">
                           <li key={list.tkName}>{list.tkName}
                             <img src={list.tkImage} alt="Tk"></img>
-                            <button onClick={() => this.handleSelect(list._id)}>Select</button>
+                            <button onClick={() => this.handleSelect(list._id)}>
+                                <Link to={{
+                                    pathname: `/tickets/pay`,
+                                    state: { 
+                                    list,
+                                    }}}>Select</Link>
+                            </button>
                             </li>
                             </div>
                     },)}
