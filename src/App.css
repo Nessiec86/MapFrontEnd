@@ -22,6 +22,7 @@ h2 {
   font-stretch: normal;
   line-height: 1.37;
   letter-spacing: 0.4px;
+  color: #425273;
 }
 .myContainer {
   display: flex;
@@ -38,7 +39,7 @@ h2 {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  margin: 6rem 0 0 0;
+  margin: 7rem 0 0 0;
 }
 
 button a {
@@ -205,7 +206,7 @@ nav {
 
 .home-background h1 {
   position: absolute;
-  margin: 5rem 1rem;
+  margin: 4rem 1rem;
   width: 222px;
   height: 78px;
   font-family: CircularStd;
@@ -220,7 +221,7 @@ nav {
 
 .home-background p {
   position: relative;
-  margin: 9rem 1rem;
+  margin: 8rem 1rem;
   width: 222px;
   height: 48px;
   font-family: CircularStd;
@@ -240,7 +241,7 @@ nav {
   background-image: radial-gradient(circle at 146% 81%, #76d1ed, #fc808f 66%, #e93a76);
   display: flex;
   position: relative;
-  margin: 16rem auto 0 auto;
+  margin: 15rem auto 0 auto;
 }
 
 .ticket-background img {
@@ -250,9 +251,10 @@ nav {
  
 .ticket-background-ok {
   width: 360px;
-  height: 239px;
+  height: 261px;
   box-shadow: 0 0 28px 7px rgba(246, 246, 247, 0.3);
   display: flex;
+  flex-direction: column;
   position: relative;
   margin: 15rem auto 0 auto;
 
@@ -327,10 +329,11 @@ nav {
 }
 
 /* Scroll*/
-.cards {
+.cards {      
+  margin: 4rem 0 0 0;
   display: flex;
   width: 321px;
-  height: 22rem;
+  height: 400px;
   background-color: #ececf2;
   min-width: 100%;
   min-height: 200px;
@@ -340,12 +343,85 @@ nav {
 .cards::-webkit-scrollbar {
   display: none;
 }
-
+.cards-h1 {
+  margin:1rem;
+  width: 290px;
+  height: 41px;
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.37;
+  letter-spacing: 0.4px;
+  color: #425273;
+}
 .cards--content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 0 3rem;
   border: solid white 5px;
+  width: 321px;
+  height: 400px;
+  background-color:  #ececf2;
 }
 
+.card--content--li {
+  list-style: none;
+}
+.card--content--li img {
+  width: 264px;
+  height: 177px;
+  box-shadow: 0 34px 28px 7px rgba(252, 128, 143, 0.11);
+}
+.card--content--li div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card--select {
+  margin: 2rem 0 0 0;
+    width: 100%;
+    height: 48px;
+    border: 2px solid #e30b4c;
+}
+.card--select a {
+  width: 208px;
+  height: 23px;
+  font-family: CircularStd;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  color: #e30b4c;
+}
+.card--select--li {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card--select img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.card--select--li p {
+  width: 132px;
+  height: 44px;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #425273;
+}
 /*Scroll Logo*/
 .card-logo {
   margin: 3rem 0;
@@ -410,6 +486,20 @@ nav {
   justify-content: space-around;
   flex-direction: row;
 }
+.tk-info p {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  font-family: CircularStd;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  color: #425273;
+}
+
 
 .data {
   display: flex;
@@ -419,4 +509,40 @@ nav {
 .data input{
   background-color: transparent;
   border: none;
+}
+.select-pay {
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+.select-pay p {
+  margin: 3rem 0 0 0;
+  width: 344px;
+  height: 69px;
+  font-family: CircularStd;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #9babc3;
+
+}
+.apple-card {
+ background-image: url(https://support.apple.com/library/content/dam/edam/applecare/images/en_US/apple-store-giftcard-2col.png);
+ background-size: 290px;
+ background-repeat: no-repeat;
+ margin: 1rem 0 0 0;
+ width: 290px;
+}
+.nfc {
+  display: flex;
+  border-radius: 50%;
+  background-color: #e30b4c;
+}
+.nfc img {
+  width: max-content;
 }

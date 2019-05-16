@@ -18,13 +18,13 @@ class Payment extends Component {
     
         
       }
-      handleFormSubmit = event => {
-        event.preventDefault();
-        const { cardname, cardnum, vadil, controlnum, userId } = this.state;
-        Card.create({ cardname, cardnum, vadil, controlnum, userId });
-        this.props.history.push("/private")
+    //   handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     const { cardname, cardnum, vadil, controlnum, userId } = this.state;
+    //     Card.create({ cardname, cardnum, vadil, controlnum, userId });
+    //     this.props.history.push("/private")
     
-      };
+    //   };
     
       handleChange = event => {
         const { name, value } = event.target;
@@ -33,7 +33,7 @@ class Payment extends Component {
     
 
   render() {
-      const ticket = this.props.location.state.list 
+      const ticket = this.props.location.state.ticket 
       const { cardname, cardnum, vadil, controlnum } = this.state;
       return (
         <>

@@ -9,6 +9,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Tickets from "./pages/Tickets";
+import PayMethod from "./pages/PayMethod";
+import MyCards from "./pages/MyCards";
 import Payment from "./pages/Payment";
 import Edit from "./pages/Edit";
 import MyTickets from "./pages/MyTickets";
@@ -28,6 +30,8 @@ class App extends Component {
             <PrivateRoute exact path="/private" component={Private} />
             <PrivateRoute exact path="/profile" component={Profile} />
             <PrivateRoute exact path="/tickets" component={Tickets} />
+            <PrivateRoute exact path="/tickets/payMethod" component={PayMethod} />
+            <PrivateRoute exact path="/tickets/myCards" component={MyCards} />
             <PrivateRoute exact path="/tickets/pay" component={Payment} />
             <PrivateRoute exact path="/tickets/edit" component={Edit} />
             <PrivateRoute exact path="/MyTickets" component={MyTickets} />

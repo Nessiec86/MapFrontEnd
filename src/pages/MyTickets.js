@@ -39,7 +39,7 @@ class Tickets extends Component {
                     <Navbar/>
                     <h1>MyTickets</h1>
                     {this.state.list.map(list => {
-                        return <li key={list.tkName}>{list.tkName}<img src={list.tkImage} alt="Tk"></img></li>;
+                        return <li key={list._id}>{list.tkName}<img src={list.tkImage} alt="Tk"></img></li>;
                     })}
                 </div>
                 );

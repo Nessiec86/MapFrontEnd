@@ -14,6 +14,7 @@ class WithTicket extends Component {
                     <h1>Welcome {this.props.user.username}!</h1>
                 </div>
                 {list && list.map(list => {
+                   
                     return  <li key={list.tkName}>
                                 <div className="edit">
                                     <Link to={{
@@ -26,9 +27,14 @@ class WithTicket extends Component {
                                 </div>
                                 <div className="ticket-background-ok">
                                     <img src={list.tkImage} alt="Tk"></img>
+                                    <p>Trips Remaining {list.tkTrips}</p>
                                 </div>
+                                <div className="nfc">
+                                    <img src="../Images/check-icon@3x.png" alt="nfc"/>
+                                </div>        
                             </li>
-                            })
+                        })
+
                 }
                 <Navbar/>
             </div>                
