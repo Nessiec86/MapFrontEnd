@@ -49,10 +49,6 @@ class SignupForm extends Component {
                     <div className="data">
                         <p>{username}</p>
                         <p>{surname}</p>
-                        {/* <Form.Control
-                            type="password"
-                            defaultValue={password}
-                        /> */}
                     </div>
                 </div>
             <Form.Group controlId="validationCustom01" className="sign">
