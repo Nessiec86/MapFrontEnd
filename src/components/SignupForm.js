@@ -17,9 +17,9 @@ class SignupForm extends Component {
     handleSubmit(event) {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
         } else {
+            event.preventDefault();
             const { username, surname, password } = this.state;
             this.props.signup({ username, surname, password });
         }
@@ -47,11 +47,11 @@ class SignupForm extends Component {
                 <div className="sign_profile">
                     <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
                     <div className="data">
-                        <p>{this.state.username}</p>
-                        <p>{this.state.surname}</p>
+                        <p>{username}</p>
+                        <p>{surname}</p>
                         <Form.Control
                             type="password"
-                            value={this.state.password}
+                            defaultValue={password}
                         />
                     </div>
                 </div>

@@ -13,8 +13,8 @@ class Payment extends Component {
         <div className="myContainer">
             <h1 className="cards-h1">Select your Card</h1>
             <section className="cards">
-                {card.map(card => {
-                    return  <div className="cards--content">
+                {card.map((card, index) => {
+                    return  <div  key={index} className="cards--content">
                             <li className="card--select--li" key={card._id}>{}
                             <div className="apple-card">
                                 <p style={{margin: "7rem 0 0 -3rem"}}>{card.cardnum}</p>

@@ -9,11 +9,10 @@ class Payment extends Component {
   render() {
     const card = this.props.location.state.card
     const ticket = this.props.location.state.list 
-     
-      return (
+    return (
         <>
-      <div className="myContainer-sesion">
-        <h2>Selected!</h2>
+        <div className="myContainer-sesion">
+            <h2>Selected!</h2>
             <div className="tk-info">
                 <img src={ticket.tkImage} alt="ticket"></img>
                 <div>
@@ -27,9 +26,9 @@ class Payment extends Component {
                 <h2>Select payment method</h2>
                 <p>We will renovate automatically your ticket when it is over. You can change your fare & payment method whenever you want or unsuscribe</p>
             </div>
-            <li>
-                <div className="card--select">
-                    <button  style={{display: "flex"}}>
+            <li style={{listStyle: "none", margin: "2rem 0 0 0"}}>
+                <div className="card--select" style={{display: "flex"}}>
+                    <button>
                         <Link to={{
                             pathname: `/tickets/pay`,
                             state: { 
@@ -37,8 +36,8 @@ class Payment extends Component {
                         }}}>New Credit Card<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
                     </button>
                 </div>
-                <div className="card--select">
-                    <button  style={{display: "flex"}}>
+                <div className="card--select" style={{display: "flex"}}>
+                    <button>
                         <Link to={{
                             pathname: `/tickets/myCards`,
                             state: { 

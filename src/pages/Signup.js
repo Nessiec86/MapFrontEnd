@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import { Link } from "react-router-dom";
 import SignupForm from "../components/SignupForm";
 
 class Signup extends Component {

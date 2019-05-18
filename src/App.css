@@ -69,7 +69,6 @@ button a {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  padding: 4rem 0 0 0;
 }
 
 .btn-signup {
@@ -96,9 +95,11 @@ button a {
   letter-spacing: 0.7px;
   /* color: #e30b4c; */
 }
+
 .btn-signup button:enabled {
   color:#e30b4c;
 }
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -132,12 +133,12 @@ nav {
   background-color: #425273;
 }
 
-
 .sign {
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
 }
+
 .sign p {
   width: 116px;
   height: 20px;
@@ -151,7 +152,6 @@ nav {
   color: #e30b4c;
 }
 
-
 .sign input {
   background-color: transparent;
   border: none;
@@ -162,7 +162,6 @@ nav {
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
-
 }
 
 .sign-ccv p {
@@ -251,18 +250,49 @@ nav {
  
 .ticket-background-ok {
   width: 360px;
-  height: 261px;
+  height: 239px;
   box-shadow: 0 0 28px 7px rgba(246, 246, 247, 0.3);
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 15rem auto 0 auto;
-
+  margin: 14rem auto 0 auto;
 }
+
+.travels p {
+  margin: 0 0 0rem 1rem;
+  font-family: CircularStd;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  color: #425273;
+}
+
+
 .ticket-background-ok img {
   width: 100%;
+  height: 239px;
+  margin: -1rem 0 0 0;
 }
 
+.ticket-background-notok {
+  width: 360px;
+  height: 239px;
+  box-shadow: 0 0 28px 7px rgba(246, 246, 247, 0.3);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 13rem auto 0 auto;
+  background-color: #e30b4c;
+}
+
+.ticket-background-notok img{
+  opacity: 0.5;
+  width: 100%;
+  height: 239px;
+}
 
 .ticket-config {
   margin: 13rem auto 0 auto;
@@ -286,7 +316,23 @@ nav {
   line-height: normal;
   letter-spacing: 1.9px;
   color: #ffffff;
+}
 
+.ticket-config img{
+  width: 2.5rem;
+  margin: 0 1rem 0 0;
+}
+
+.ticket-config button {
+  text-decoration: none;
+  font-family: CircularStd;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #ffffff;
 }
 
 .ticket-name {
@@ -343,6 +389,7 @@ nav {
 .cards::-webkit-scrollbar {
   display: none;
 }
+
 .cards-h1 {
   margin:1rem;
   width: 290px;
@@ -356,6 +403,7 @@ nav {
   letter-spacing: 0.4px;
   color: #425273;
 }
+
 .cards--content {
   display: flex;
   flex-direction: row;
@@ -370,22 +418,26 @@ nav {
 .card--content--li {
   list-style: none;
 }
+
 .card--content--li img {
   width: 264px;
   height: 177px;
   box-shadow: 0 34px 28px 7px rgba(252, 128, 143, 0.11);
 }
+
 .card--content--li div {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .card--select {
   margin: 2rem 0 0 0;
-    width: 100%;
-    height: 48px;
-    border: 2px solid #e30b4c;
+  width: 100%;
+  height: 48px;
+  border: 2px solid #e30b4c;
 }
+
 .card--select a {
   width: 208px;
   height: 23px;
@@ -398,17 +450,20 @@ nav {
   letter-spacing: 0.7px;
   color: #e30b4c;
 }
+
 .card--select--li {
   list-style: none;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .card--select img {
   width: 26px;
   height: 26px;
   object-fit: contain;
 }
+
 .card--select--li p {
   width: 132px;
   height: 44px;
@@ -427,7 +482,7 @@ nav {
   margin: 3rem 0;
   display: flex;
   width: 321px;
-  height: 22rem;
+  height: 26rem;
   background-color: #ececf2;
   min-width: 100%;
   min-height: 200px;
@@ -441,6 +496,7 @@ nav {
 .card--content-logo {
   border: solid whitesmoke 5px;
 }
+
 .card--content-logo img {
   width: 327px;
   height: 408px;
@@ -468,12 +524,12 @@ nav {
 
 }
 
-
 .demoForm {
 	width: 400px;
 	max-width: 80%;
 	margin: auto;
 }
+
 .formErrors {
   display: flex;
   justify-content: space-around;
@@ -486,6 +542,7 @@ nav {
   justify-content: space-around;
   flex-direction: row;
 }
+
 .tk-info p {
   display: flex;
   justify-content: space-around;
@@ -500,23 +557,24 @@ nav {
   color: #425273;
 }
 
-
 .data {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
 .data input{
   background-color: transparent;
   border: none;
 }
+
 .select-pay {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
 }
+
 .select-pay p {
   margin: 3rem 0 0 0;
   width: 344px;
@@ -529,20 +587,12 @@ nav {
   line-height: normal;
   letter-spacing: normal;
   color: #9babc3;
+}
 
-}
 .apple-card {
- background-image: url(https://support.apple.com/library/content/dam/edam/applecare/images/en_US/apple-store-giftcard-2col.png);
- background-size: 290px;
- background-repeat: no-repeat;
- margin: 1rem 0 0 0;
- width: 290px;
-}
-.nfc {
-  display: flex;
-  border-radius: 50%;
-  background-color: #e30b4c;
-}
-.nfc img {
-  width: max-content;
+  background-image: url(https://support.apple.com/library/content/dam/edam/applecare/images/en_US/apple-store-giftcard-2col.png);
+  background-size: 290px;
+  background-repeat: no-repeat;
+  margin: 1rem 0 0 0;
+  width: 290px;
 }

@@ -15,7 +15,7 @@ class WhithoutTicket extends Component  {
         <div className="ticket-background">
           <img src="../Images/tickets-no-fare@3x.png" alt="Ticket"></img>
           <div className="ticket-config">
-            <Link to="/Config/" >CONFIGURE</Link>
+            <Link to="/Tickets/" >CONFIGURE</Link>
           </div>
         </div>
         <Navbar/>

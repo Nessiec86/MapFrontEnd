@@ -17,9 +17,9 @@ class LoginForm extends Component {
     handleSubmit(event) {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
-            event.preventDefault();
             event.stopPropagation();
         } else {
+            event.preventDefault();
             const { username, password } = this.state;
             this.props.login({ username, password });
         }
@@ -31,7 +31,7 @@ class LoginForm extends Component {
     };
     
     render() {
-      const { username, password, validated } = this.state;
+      const { username, surname, password, validated } = this.state;
       
       return (
         <div className="myContainer-sesion">
@@ -44,9 +44,13 @@ class LoginForm extends Component {
                 <h2>Login</h2>
                 <div className="sign_profile">
                     <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
-                    <div>
-                        <p>{this.state.username}</p>
-                        <p>{this.state.surname}</p>
+                    <div className="data">
+                        <p>{username}</p>
+                        <p>{surname}</p>
+                        <Form.Control
+                            type="password"
+                            defaultValue={password}
+                        />
                     </div>
                 </div>
             <Form.Group controlId="validationCustom01" className="sign">

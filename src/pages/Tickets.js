@@ -52,9 +52,9 @@ class Tickets extends Component {
                   <div className="myContainer">
                     <h1 className="cards-h1">Select your fare</h1>
                     <section className="cards">
-                    {this.state.list.map(list => {
-                        return <div className="cards--content">
-                          <li className="card--content--li" key={list._id}>{list.tkName}
+                    {this.state.list.map((list, index) => {
+                        return <div key={index} className="cards--content">
+                          <li className="card--content--li" >{list.tkName}
                             <img src={list.tkImage} alt="Tk"></img>
                             <div>
                                 <p>Trips  {list.tkTrips}</p>
@@ -75,7 +75,7 @@ class Tickets extends Component {
                                 
                     },)}
                     </section>
-                <div style={{ margin:'-2.5rem 0 0 0' }}>
+                <div style={{ margin:'-3.5rem 0 0 0' }}>
                     <Navbar/>
                 </div>
                 </div>

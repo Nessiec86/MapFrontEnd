@@ -15,7 +15,6 @@ class Private extends Component {
   }
 
   componentDidMount(){
-    
     TicketService.joined()
         .then((list) => {
           AuthService.me()
@@ -42,14 +41,13 @@ class Private extends Component {
     const { isLoading } = this.state;
     const { list } = this.state;
     const { user } = this.state;
-    console.log(list)
-    console.log (user)  
+    
     return isLoading ?
       <LoadingDots/> :
       list.length !== 0 ?
-      <WithTicket with tickeys tickets={ list } usertickets={ user } />
+      <WithTicket  tickets={ list } usertickets={ user } />
       :
-      <WhithoutTicket sin tickets />
+      <WhithoutTicket />
   }
 }
 
