@@ -9,6 +9,7 @@ class Payment extends Component {
   render() {
     const card = this.props.location.state.card
     const ticket = this.props.location.state.list 
+    
     return (
         <>
         <div className="myContainer-sesion">
@@ -42,7 +43,8 @@ class Payment extends Component {
                             pathname: `/tickets/myCards`,
                             state: { 
                             card,
-                        }}}>My credit Cards<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
+                        }}}>My credit Cards<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/>
+                        </Link>
                     </button>
                 </div>
             </li>

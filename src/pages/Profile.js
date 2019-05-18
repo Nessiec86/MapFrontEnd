@@ -56,9 +56,9 @@ class Profile extends Component {
                
                 <div className="App">
                     <h1>My Credit Cards</h1>
-                    {card.map(card => {
-                        return <li key={card._id}>{card.cardname}</li>;
-                    })}
+                    {card ? card.map(card => {
+                        return  <li key={card._id}>{card.cardname}</li>;
+                    }) : <p>No cards</p>} 
                 </div>
                
                     </div>
