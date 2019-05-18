@@ -28,7 +28,6 @@ class Counter extends Component {
     const tripsRemaining = this.state.counter
     const ticketId = this.state.ticketId
 
-    console.log(this.state)
     if (tripsRemaining === 0) {
       this.handleDelete(ticketId)
     }

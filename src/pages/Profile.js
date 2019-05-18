@@ -19,7 +19,6 @@ class Profile extends Component {
                 });
             })
             .catch(error => {
-                console.log("error", error);
                 this.setState({
                     status: "error"
             });
@@ -58,7 +57,6 @@ class Profile extends Component {
                 <div className="App">
                     <h1>My Credit Cards</h1>
                     {card.map(card => {
-                        console.log(card.cardname)
                         return <li key={card._id}>{card.cardname}</li>;
                     })}
                 </div>

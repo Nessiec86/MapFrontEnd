@@ -7,7 +7,6 @@ class Navbar extends Component {
   
   
   handleReturn () {
-    console.log(this.props.history.goBack)
     this.props.history.goBack();
   }
 

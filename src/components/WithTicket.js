@@ -23,7 +23,6 @@ class WithTicket extends Component {
         const tripsRemainig = this.state.trips;
         const list = this.props.tickets;
 
-        console.log(this.props)
         return (
             <div className="myContainer">
                 <div className="home-background">

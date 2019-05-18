@@ -28,7 +28,6 @@ class Private extends Component {
           })
         })
         .catch(error => {
-            console.log("error", error);
             this.setState({
                 status: "error",
                 isLoading: false

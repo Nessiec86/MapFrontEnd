@@ -19,7 +19,7 @@ class Error extends Component {
     }
     
     render() {
-        console.log(this.state)
+       
         if (this.state.errorInfo) {
             // Error path
          return (

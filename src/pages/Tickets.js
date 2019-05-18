@@ -28,7 +28,6 @@ class Tickets extends Component {
                 })
             })
             .catch(error => {
-                console.log("error", error);
                 this.setState({
                     status: "error"
             });
@@ -42,7 +41,6 @@ class Tickets extends Component {
     }
         
     render() {
-        console.log(this.state.list)
         const card = this.state.card
         switch (this.state.status) {
             case "loading":

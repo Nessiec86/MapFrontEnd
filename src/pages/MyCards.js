@@ -7,7 +7,6 @@ class Payment extends Component {
     
     
   render() {
-      console.log(this.props.location.state.card)
      const card = this.props.location.state.card
       return (
         <div className="myContainer">

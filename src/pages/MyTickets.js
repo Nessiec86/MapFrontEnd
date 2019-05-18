@@ -20,8 +20,6 @@ class Tickets extends Component {
                 });
             })
             .catch(error => {
-                console.log("error", error);
-                
                 this.setState({
                     status: "error"
             });
