@@ -33,6 +33,13 @@ class Auth {
   me() {
     return this.auth.get("/auth/me").then(response => response.data);
   }
+
+  updateTrip (state) {
+    return this.auth
+      .post(`auth/ticket/update/`, state )
+      .then(({ data }) => data);
+  }
+
 }
 
 const auth = new Auth();

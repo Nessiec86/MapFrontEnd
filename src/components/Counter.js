@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import TicketService from "../lib/ticket-service";
+import authService from "../lib/auth-service";
 
 class Counter extends Component {
 
@@ -20,7 +21,8 @@ class Counter extends Component {
       counter: trips - 1,
     });
     this.props.getTrips(trips)
-    TicketService.updateTrip(this.state)
+    // TicketService.updateTrip(this.state)
+    authService.updateTrip(this.state)
   };
   
   
