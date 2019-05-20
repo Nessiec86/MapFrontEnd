@@ -6,7 +6,10 @@
     transform: rotate(360deg);
   }
 }
-
+.center-log {
+  margin: 1rem 0 2rem 1rem;
+  text-align: center;  
+}
 body {
   background-color: whitesmoke;
   margin: 0 auto;
@@ -517,12 +520,6 @@ nav {
   margin: 1rem;
 }
 
-.profile-background {
-  width: 375px;
-  height: 318px;
-  background-image: linear-gradient(311deg, #ff3c54, #b5003c);
-
-}
 
 .demoForm {
 	width: 400px;
@@ -595,4 +592,94 @@ nav {
   background-repeat: no-repeat;
   margin: 1rem 0 0 0;
   width: 290px;
+}
+
+/* Profile */
+
+.profile-background {
+  width: 375px;
+  height: 318px;
+  background-image: linear-gradient(311deg, #ff3c54, #b5003c);
+}
+
+.profile-background img {
+  width: 100%;
+  opacity: 0.4;
+  height: 20rem;
+  position: absolute;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0 0 2rem;
+}
+
+.profile-name h1 {
+  position: relative;
+  margin: 0 1rem 0 0;
+  font-family: CircularStd;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.profile img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin: 0 10rem 0 0;
+}
+.profile-ul{
+  margin: 2rem 0 2rem 0;
+  padding: 0px;
+}
+.profile-list {
+  list-style: none;
+  border: 1px solid grey;
+  padding: 1rem 0 1rem 0;
+}
+.profile-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.profile-data h3 {
+  margin: 0 5rem 0 0;
+  width: 47px;
+  height: 22px;
+  font-family: CircularStd;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: -0.4px;
+  color: #425273;
+}
+
+.profile-data p {
+  width: 164px;
+  height: 22px;
+  font-family: CircularStd;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.22;
+  letter-spacing: -0.4px;
+  text-align: right;
+  color: #f0516e;
+
 }

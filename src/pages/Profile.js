@@ -3,14 +3,17 @@ import { withAuth } from "../lib/AuthProvider";
 import Navbar from "../components/Navbar";
 import LoadingDots  from "../components/LoadingDots";
 import CardService from "../lib/card-service";
+import AuthService from "../lib/auth-service";
+import { Link } from "react-router-dom";
 
 class Profile extends Component {
     state = {
+        userupdate: [],
         card: [],
         status: "loaded"
     }
 
-    componentDidMount(){
+    componentDidMount = () => {
         CardService.read()
             .then((card) => {
                 this.setState({
@@ -23,42 +26,114 @@ class Profile extends Component {
                     status: "error"
             });
         });
+        AuthService.read()
+            .then((user) => {
+                console.log(user)
+                this.setState({
+                    userupdate: user,
+                    status: "loaded"
+                });
+            })
+            .catch(error => {
+                this.setState({
+                    status: "error"
+            });
+        });
     }
+
+    handleDelete = cardId => {
+        CardService.delete(cardId)
+        CardService.read()
+            .then((card) => {
+                this.setState({
+                    card,
+                    status: "loaded"
+                });
+            })
+            .catch(error => {
+                this.setState({
+                    status: "error"
+            });
+        });
+        
+    }
+
         
     render() {
         const { card } = this.state;
+        const { username, surname, } = this.props.user;
+        const user = this.props.user;
+        const { age, email } = this.state.userupdate;
+
+        console.log(this.state.prueba)
         switch (this.state.status) {
             case "loading":
               return <LoadingDots/>;
             case "loaded":
               return (
-                  <div className="myContainer">
-                  <div className="profile-background">
-                    <h1>{this.props.user.username}</h1>
+                <div className="myContainer">
+                <div className="profile-background">
+                    <img src="/Images/profile-placeholder@3x.png" alt="face"/>
+                    <div className="profile-name">
+                        <h1>{username}</h1>
+                        <h1>{surname}</h1>
                     </div>
-                    <section className="">
-                    <div>
-                        <p>Edit</p>
+                </div>
+                <section style={{margin:'1rem 0 0 0'}}>
+                    <h3>Personal information</h3>
+                    <div className="profile">
+                        <img src="/Images/profile-placeholder@3x.png" alt="face"/>
+                        <button>
+                            <Link to={{
+                                pathname: '/profile/edit',
+                                state: { 
+                                   user,
+                                }}}><p>Edit</p></Link>
+                        </button>
                     </div>
-                    <div>
-                        <h3>Name</h3>
-                        <p>{this.props.user.username}</p>
-                    </div>
-                    <div>
-                        <h3>Surname</h3>
-                        <p>{this.props.user.surname}</p>
-                    </div>
-                    <div>
-                        <h3>Main City</h3>
-                        <p>Barcelona</p>
-                    </div>
-                    <div>
-               
+                    <ul className="profile-ul">
+                        <li className="profile-list">
+                            <div className="profile-data">
+                                <h3>Name</h3>
+                                <p>{username}</p>
+                            </div>
+                        </li>
+                        <li className="profile-list">
+                            <div className="profile-data">
+                                <h3>Surname</h3>
+                                <p>{surname}</p>
+                            </div>
+                        </li>
+                        <li className="profile-list">
+                            <div className="profile-data">
+                                <h3>Age</h3>
+                                <p>{age}</p>
+                            </div>
+                        </li>
+                        <li className="profile-list">
+                            <div className="profile-data">
+                                <h3>Email</h3>
+                                <p>{email}</p>
+                            </div>
+                        </li>
+                        <li className="profile-list">
+                            <div className="profile-data">
+                                <h3>Main City</h3>
+                                <p>Barcelona</p>
+                            </div>
+                        </li>
+                    </ul>
+                <div>
                 <div className="App">
                     <h1>My Credit Cards</h1>
                     {card ? card.map(card => {
-                        return  <li key={card._id}>{card.cardname}</li>;
-                    }) : <p>No cards</p>} 
+                        return  <div key={card._id}>
+                                    <li>{card.cardname}</li>
+                                    <button  onClick={()=> this.handleDelete (card._id)}> Delete Card</button>
+                                </div>
+                        }) :
+                    <p>No cards</p>
+                    } 
                 </div>
                
                     </div>

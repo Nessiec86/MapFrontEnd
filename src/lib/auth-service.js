@@ -36,10 +36,22 @@ class Auth {
 
   updateTrip (state) {
     return this.auth
-      .post(`auth/ticket/update/`, state )
+      .put(`auth/ticket/update/`, state )
       .then(({ data }) => data);
   }
 
+  read () {
+    return this.auth
+      .get('/auth/profile/')
+      .then(({data}) => data);
+    }
+
+  update (user) {
+    console.log(user)
+    return this.auth
+      .put('/auth/profile/edit', user)
+      .then(({data}) => data);
+    }
 }
 
 const auth = new Auth();

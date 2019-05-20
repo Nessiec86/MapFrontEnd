@@ -37,12 +37,6 @@ class Ticket {
     .then(({ data }) => data);
   }
 
-  // updateTrip (state) {
-  //   return this.Ticket
-  //     .put(`tickets/trip/`, state )
-  //     .then(({ data }) => data);
-  // }
-
   delete (ticketId) {
     return this.Ticket
       .post(`tickets/edit/${ticketId}`)

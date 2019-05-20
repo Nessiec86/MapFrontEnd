@@ -9,6 +9,7 @@ class Card {
   }
 
   create (card) {
+    console.log(card)
     const { cardname, cardnum, vadil, controlnum, userId } = card;
     return this.Card
       .post("profile/pay", { cardname, cardnum, vadil, controlnum, userId })
@@ -19,6 +20,13 @@ class Card {
     .get("profile/card")
     .then(({ data }) => data);
   }
+  
+  delete (cardId) {
+    return this.Card
+      .delete(`profile/card/${cardId}`)
+      .then(({ data }) => data);
+  }
+
   // join (cardId) {
   //   return this.Card
   //   .put(`profile/pay/${cardId}`)
@@ -33,11 +41,6 @@ class Card {
 
   
   
-  delete () {
-    return this.Card
-      .post(`tickets/edit/`)
-      .then(({ data }) => data);
-  }
 }
 
 const card = new Card();

@@ -42,6 +42,7 @@ class Tickets extends Component {
         
     render() {
         const card = this.state.card
+        
         switch (this.state.status) {
             case "loading":
               return <LoadingDots/>;
@@ -50,28 +51,27 @@ class Tickets extends Component {
                   <div className="myContainer">
                     <h1 className="cards-h1">Select your fare</h1>
                     <section className="cards">
-                    {this.state.list.map((list, index) => {
-                        return <div key={index} className="cards--content">
-                          <li className="card--content--li" >{list.tkName}
-                            <img src={list.tkImage} alt="Tk"></img>
-                            <div>
-                                <p>Trips  {list.tkTrips}</p>
-                                <p>{list.tkPrice}€</p>
-                            <div className="card--select">
-                                <button onClick={() => this.handleSelect(list._id)} style={{display: "flex"}}>
-                                <Link to={{
-                                    pathname: `/tickets/paymethod`,
-                                    state: {
-                                        list,
-                                        card
-                                    }}}>SELECT THIS FARE<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
-                                </button>
+                        {this.state.list.map((list, index) => {
+                            return <div key={index} className="cards--content">
+                            <li className="card--content--li" >{list.tkName}
+                                <img src={list.tkImage} alt="Tk"></img>
+                                <div>
+                                    <p>Trips  {list.tkTrips}</p>
+                                    <p>{list.tkPrice}€</p>
+                                    <div className="card--select">
+                                        <button onClick={() => this.handleSelect(list._id)} style={{display: "flex"}}>
+                                        <Link to={{
+                                            pathname: `/tickets/paymethod`,
+                                            state: {
+                                                list,
+                                                card
+                                            }}}>SELECT THIS FARE<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                          </li>
-                        </div>
-                                
-                    },)}
+                            </li>
+                            </div>  
+                        },)}
                     </section>
                 <div style={{ margin:'-3.5rem 0 0 0' }}>
                     <Navbar/>

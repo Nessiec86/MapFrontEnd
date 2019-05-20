@@ -14,13 +14,15 @@ class SignupForm extends Component {
         };
     };
 
-    handleSubmit(event) {
+    handleSubmit = event => {
         const form = event.currentTarget;
+        const { username, surname, password } = this.state;
+            
         if (form.checkValidity() === false) {
+            event.preventDefault();
             event.stopPropagation();
         } else {
             event.preventDefault();
-            const { username, surname, password } = this.state;
             this.props.signup({ username, surname, password });
         }
         this.setState({ validated: true });

@@ -7,6 +7,7 @@ class Edit extends Component {
 
     handleDelete(ticketId){
         TicketService.delete(ticketId)
+        TicketService.joined()
         this.props.history.push("/private")
     }
     

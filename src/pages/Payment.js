@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Card from "../lib/card-service";
 import { OverlayTrigger } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 
 class Payment extends Component {
     state = {
+        validated: false,
         cardname: "",
         cardnum: "",
         vadil: "",
@@ -18,6 +20,18 @@ class Payment extends Component {
         this.props.history.push("/private")
     };
 
+    handleSubmit(event) {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.stopPropagation();
+        } else {
+            const { username, password } = this.state;
+            event.preventDefault();
+            this.props.login({ username, password });
+        }
+        this.setState({ validated: true });
+    }
+    
       handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
@@ -25,7 +39,7 @@ class Payment extends Component {
    
     render() {
         const ticket = this.props.location.state.ticket 
-        const { cardname, cardnum, vadil, controlnum } = this.state;
+        const { cardname, cardnum, vadil, controlnum, validated } = this.state;
         const renderTooltip = props => (
             <div
               {...props}
@@ -57,17 +71,31 @@ class Payment extends Component {
                     <h2>Configure your payment method</h2>
                     <p>We will renovate automatically your ticket when it is over. You can change your fare & payment method whenever you want or unsuscribe</p>
                 </div>
-                <div className="sign">
+
+                <Form
+                    noValidate
+                    validated={validated}
+                    onSubmit={e => this.handleSubmit(e)}
+                    
+                >
+                <Form.Group controlId="validationCustom01" className="sign">
                     <label>Cardholder name:</label>
-                    <input
+                    <Form.Control 
+                        className="sign"
                         type="text"
                         name="cardname"
                         value={cardname}
                         onChange={this.handleChange}
                         required
                     />
-                <div className="line"></div>
-            </div>
+                    <div className="line"></div>
+                {cardname === '' ? 
+                    <Form.Control.Feedback type="invalid">
+                        Card Name is required.
+                    </Form.Control.Feedback> :
+                    <Form.Control.Feedback>Great Cardname!</Form.Control.Feedback>
+                }
+                </Form.Group>
                 <div className="sign">
                     <label>Card number:</label>
                     <input
@@ -108,9 +136,16 @@ class Payment extends Component {
                     <p>What's that?</p>
                     </OverlayTrigger>
                 </div>
-                <div className="btn-signup">
-                    <button onClick={() => this.handleSelect(this.state)}>PAY</button>
-                </div>
+                {cardname === '' || cardnum === '' || vadil === '' || controlnum === ''?
+                    <div className="btn-signup">
+                        <button disabled>PAY</button>
+                    </div>
+                :
+                    <div className="btn-signup">
+                        <button onClick={() => this.handleSelect(this.state)}>PAY</button>
+                    </div>
+                }
+                </Form>
             </div>
             </>
         );

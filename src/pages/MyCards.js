@@ -30,18 +30,18 @@ class Payment extends Component {
                             </div>
                                 </li>
                             </div>
-                }): <>
+                }) : <>
                     <p>No cards</p>
                     <div className="card--select" style={{display: "flex"}}>
-                    <button>
-                        <Link to={{
-                            pathname: `/tickets/pay`,
-                            state: { 
-                            ticket,
-                        }}}>New Credit Card<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
-                    </button>
-                </div>
-                </>
+                        <button>
+                            <Link to={{
+                                pathname: `/tickets/pay`,
+                                state: { 
+                                ticket,
+                            }}}>New Credit Card<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
+                        </button>
+                    </div>
+                    </>
                 }
             </section>
             
