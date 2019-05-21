@@ -28,7 +28,6 @@ class Profile extends Component {
         });
         AuthService.read()
             .then((user) => {
-                console.log(user)
                 this.setState({
                     userupdate: user,
                     status: "loaded"
@@ -65,7 +64,6 @@ class Profile extends Component {
         const user = this.props.user;
         const { age, email } = this.state.userupdate;
 
-        console.log(this.state.prueba)
         switch (this.state.status) {
             case "loading":
               return <LoadingDots/>;
@@ -80,7 +78,7 @@ class Profile extends Component {
                     </div>
                 </div>
                 <section style={{margin:'1rem 0 0 0'}}>
-                    <h3>Personal information</h3>
+                    <h3 className="info-h3">Personal information</h3>
                     <div className="profile">
                         <img src="/Images/profile-placeholder@3x.png" alt="face"/>
                         <button>
@@ -124,25 +122,25 @@ class Profile extends Component {
                         </li>
                     </ul>
                 <div>
-                <div className="App">
-                    <h1>My Credit Cards</h1>
-                    {card ? card.map(card => {
-                        return  <div key={card._id}>
-                                    <li>{card.cardname}</li>
-                                    <button  onClick={()=> this.handleDelete (card._id)}> Delete Card</button>
-                                </div>
-                        }) :
-                    <p>No cards</p>
-                    } 
+                    <div className="App">
+                        <h3 className="info-h3">My Credit Cards</h3>
+                        {card ? card.map(card => {
+                            return  <div key={card._id} className="card-list">
+                                        <div>
+                                            <li>{card.cardname}</li>
+                                            <li>{card.cardnum}</li>
+                                        </div>
+                                           <button  onClick={()=> this.handleDelete (card._id)}><p>Delete Card</p></button>
+                                    </div>
+                            }) :
+                        <p>No cards</p>
+                        } 
+                    </div>
                 </div>
-               
+                </section>
+                    <div style={{margin: '-3rem 0 1rem 0'}}>
+                        <Navbar/>
                     </div>
-                    <div>
-                        
-                    </div>
-                    
-                    </section>
-                <Navbar/>
                 </div>
                 );
             case "error":

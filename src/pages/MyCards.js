@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import { Link } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 
 class Payment extends Component {
     
-    
   render() {
-     const card = this.props.location.state.card
-     const ticket = this.props.location.state.ticket
+    const card = this.props.location.state.card
+    const ticket = this.props.location.state.ticket
 
      return (
         <div className="myContainer">
@@ -18,8 +17,8 @@ class Payment extends Component {
                     return  <div  key={index} className="cards--content">
                             <li className="card--select--li" key={card._id}>{}
                             <div className="apple-card">
-                                <p style={{margin: "7rem 0 0 -3rem"}}>{card.cardnum}</p>
-                                <p style={{margin: "-1rem 0 0 -2rem"}}>{card.cardname}</p>
+                                <p style={{margin: "7rem 0 0 0.8rem"}}>{card.cardname}</p>
+                                <p style={{margin: "-1.5rem 0 0 2rem"}}>{card.cardnum}</p>
                             </div>
                             <div className="card--select">
                                 <button style={{display: "flex"}}>
@@ -44,7 +43,9 @@ class Payment extends Component {
                     </>
                 }
             </section>
-            
+            <div style={{margin: '-3.5rem 0 0 0'}}>
+                <Navbar/>
+            </div>
         </div>
        );
                         

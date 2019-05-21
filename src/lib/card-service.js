@@ -9,7 +9,6 @@ class Card {
   }
 
   create (card) {
-    console.log(card)
     const { cardname, cardnum, vadil, controlnum, userId } = card;
     return this.Card
       .post("profile/pay", { cardname, cardnum, vadil, controlnum, userId })

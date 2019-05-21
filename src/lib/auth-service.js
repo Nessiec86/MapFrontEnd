@@ -47,7 +47,6 @@ class Auth {
     }
 
   update (user) {
-    console.log(user)
     return this.auth
       .put('/auth/profile/edit', user)
       .then(({data}) => data);

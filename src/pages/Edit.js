@@ -31,7 +31,9 @@ class Edit extends Component {
                         </div>
                 </li>
         },)}
-        <Navbar/>
+        <div style={{margin:'-1rem 0 0 0'}}>
+            <Navbar/>
+        </div>
         </div>
     );
   }

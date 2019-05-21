@@ -12,16 +12,13 @@ class ProfileEdit extends Component {
     }
 
     handleChange = event => {
-        console.log(event)
         const { name, value } = event.target;
         this.setState({ [name]: value });
-      };
+    };
     
     handleEdit = (state) => {
-        console.log(state)
         AuthService.update(state)
         this.props.history.push("/profile")
-    
     }
         
     componentWillMount(){
@@ -29,6 +26,7 @@ class ProfileEdit extends Component {
             user: this.props.user,
         });
     }
+
     render() {
         const { username, surname } = this.state.user;
         switch (this.state.status) {

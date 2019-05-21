@@ -34,9 +34,8 @@ class Navbar extends Component {
                 <img src="../Images/account@3x.png" alt="my smar-t" style={{width: '3rem'}}></img>  
               </Link>
             </div>
-            
             <div>
-              <button onClick={logout}>Logout</button>
+              <button onClick={logout}><img src="../Images/shut-down.svg" alt="log" style={{width: '2.5rem'}}/></button>
             </div>
           </nav>
           </>

@@ -45,7 +45,7 @@ class SignupForm extends Component {
                 onSubmit={e => this.handleSubmit(e)}
                 className="text-center"
             >
-                <h2>Sign up</h2>
+                <h2 className="center-log">Sign up</h2>
                 <div className="sign_profile">
                     <img src="../Images/avatar@2x.png" width="74px" height="74px"  alt="avatar"></img>
                     <div className="data">
@@ -54,7 +54,7 @@ class SignupForm extends Component {
                     </div>
                 </div>
             <Form.Group controlId="validationCustom01" className="sign">
-                <Form.Label>Name</Form.Label>
+                <Form.Label style={{margin: "2rem 0 -1rem -19rem"}}>Name</Form.Label>
                 <Form.Control 
                     className="sign"
                     required
@@ -70,7 +70,7 @@ class SignupForm extends Component {
                 <Form.Control.Feedback>Nice Name!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="validationCustom02" className="sign">
-                <Form.Label>Surname</Form.Label>
+                <Form.Label style={{margin: "1rem 0px 0.5rem -18rem"}}>Surname</Form.Label>
                 <Form.Control
                     required
                     type="text"
@@ -85,7 +85,7 @@ class SignupForm extends Component {
                 <Form.Control.Feedback>Well done!</Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId="validationCustom03" className="sign">
-                <Form.Label>Password:</Form.Label>
+                <Form.Label style={{margin:"1rem 0 0 -17rem"}}>Password:</Form.Label>
                 <Form.Control
                     required
                     type="password"
