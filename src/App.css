@@ -10,14 +10,17 @@
   margin: 1rem 0 2rem 1rem;
   text-align: center;  
 }
+
 body {
   background-color: whitesmoke;
   margin: 0 auto;
   font-family: CircularStd;
 }
+
 body li {
   list-style: none;
 }
+
 h2 {
   width: 290px;
   height: 41px;
@@ -30,6 +33,7 @@ h2 {
   letter-spacing: 0.4px;
   color: #425273;
 }
+
 .myContainer {
   display: flex;
   flex-direction: column;
@@ -99,7 +103,6 @@ button a {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 0.7px;
-  /* color: #e30b4c; */
 }
 
 .btn-signup button:enabled {
@@ -275,7 +278,6 @@ nav {
   letter-spacing: 0.2px;
   color: #425273;
 }
-
 
 .ticket-background-ok img {
   width: 100%;
@@ -485,6 +487,7 @@ nav {
   text-align: right;
   color: #425273;
 }
+
 /*Scroll Logo*/
 .card-logo {
   margin: 3rem 0;
@@ -614,7 +617,6 @@ nav {
 }
 
 /* Profile */
-
 .profile-background {
   width: 375px;
   height: 318px;
@@ -647,27 +649,30 @@ nav {
   color: #ffffff;
 }
 
-
 .profile {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
+
 .profile img {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   margin: 0 10rem 0 0;
 }
+
 .profile-ul{
   margin: 2rem 0 2rem 0;
   padding: 0px;
 }
+
 .profile-list {
   list-style: none;
   border: 1px solid grey;
   padding: 1rem 0 1rem 0;
 }
+
 .profile-data {
   display: flex;
   flex-direction: row;

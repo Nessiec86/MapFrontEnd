@@ -13,6 +13,7 @@ const DotWrapper = styled.div`
   justify-content: center;
   margin: 50% 0 0 0;
 `;
+
 const Dot = styled.div`
   background-color: black;
   border-radius: 50%;
@@ -23,6 +24,7 @@ const Dot = styled.div`
   animation: ${BounceAnimation} 0.5s linear infinite;
   animation-delay: ${props => props.delay};
 `;
+
 class LoadingDots extends Component {
   render() {
     return (
@@ -35,4 +37,5 @@ class LoadingDots extends Component {
     )
   }
 }
+
 export default LoadingDots;

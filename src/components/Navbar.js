@@ -5,25 +5,16 @@ import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   
-  
-  handleReturn () {
-    this.props.history.goBack();
-  }
-
-  
-  
   render() {
-    
     const { logout, isLoggedin } = this.props;
     return (
       <div className="Navbar">
         {isLoggedin ? (
           <>
           <nav>
-          <div>
+            <div>
               <img src="../Images/expenses@3x.png" alt="log" style={{width: '3rem'}}></img>
-              {/* <button onClick={this.handleReturn}>Return</button> */}
-          </div>
+            </div>
             <div>
               <Link to="/Private/" >
                 <img src="../Images/mysmar-t@3x.png" alt="my smar-t" style={{width: '3rem'}}></img>  
@@ -44,7 +35,6 @@ class Navbar extends Component {
           </>
         )}
       </div>
-      
     );
   }
 }

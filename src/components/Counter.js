@@ -9,8 +9,6 @@ class Counter extends Component {
     counter: this.props.trips,
     ticketId: this.props.ticketId,
   };
-
-
   
   handleDelete(ticketId){
     TicketService.delete(ticketId)
@@ -21,10 +19,8 @@ class Counter extends Component {
       counter: trips - 1,
     });
     this.props.getTrips(trips)
-    // TicketService.updateTrip(this.state)
     authService.updateTrip(this.state)
   };
-  
   
   render() {
     const tripsRemaining = this.state.counter
@@ -40,7 +36,8 @@ class Counter extends Component {
         <div className="ticket-config" style={{margin: "-2.5rem auto 1rem auto"}}>
           <button onClick={() => this.handleDecrease(tripsRemaining, ticketId)} style={{display:"flex"}}>
             <img src="../Images/final-nfc-vector-black@3x.png" alt="nfc"/>
-            <p style={{margin: "0.5rem 3rem 0 0"}}>PAY</p></button>
+            <p style={{margin: "0.5rem 3rem 0 0"}}>PAY</p>
+          </button>
         </div>
         <div className="travels">
           <p>Travels:{tripsRemaining}</p>
