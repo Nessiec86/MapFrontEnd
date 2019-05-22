@@ -53,12 +53,11 @@ class AuthProvider extends Component {
           isLoading: false
         });
       });
-  }
+  };
 
   signup = user => {
     const { username, surname, password } = user;
-    auth
-      .signup({ username, surname, password })
+    auth.signup({ username, surname, password })
       .then(user => {
         this.setState({
           isLoggedin: true,
@@ -74,8 +73,7 @@ class AuthProvider extends Component {
 
   login = user => {
     const { username, password } = user;
-    auth
-      .login({ username, password })
+    auth.login({ username, password })
       .then(user => {
         this.setState({
           isLoggedin: true,
@@ -96,11 +94,12 @@ class AuthProvider extends Component {
       })
       .catch(() => {});
   };
+
   render() {
     const { isLoading, isLoggedin, user } = this.state;
     return isLoading ? (
       <LoadingDots/> 
-    ) : (
+      ) : (
       <Provider
         value={{
           isLoggedin,
@@ -110,7 +109,7 @@ class AuthProvider extends Component {
           signup: this.signup
         }}
       >
-        {this.props.children}
+      {this.props.children}
       </Provider>
     );
   }

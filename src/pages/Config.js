@@ -6,21 +6,17 @@ import Navbar from "../components/Navbar";
 
 class Config extends Component {
 
-  
-
   render() {
     return (
       <div className="myContainer">
-          <div>
-            <Link to="/tickets/" >Tickets</Link>
-          </div>
-          <div>
-        <Link to="/MyTickets/" >MyTickets</Link>
+        <div>
+          <Link to="/tickets/" >Tickets</Link>
         </div>
-
-      <Navbar/>
+        <div>
+          <Link to="/MyTickets/" >MyTickets</Link>
+        </div>
+        <Navbar/>
       </div>
-
     );
   }
 }

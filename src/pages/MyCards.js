@@ -9,27 +9,28 @@ class Payment extends Component {
     const card = this.props.location.state.card
     const ticket = this.props.location.state.ticket
 
-     return (
+    return (
         <div className="myContainer">
             <h1 className="cards-h1">Select your Card</h1>
             <section className="cards">
                 {card ? card.map((card, index) => {
                     return  <div  key={index} className="cards--content">
-                            <li className="card--select--li" key={card._id}>{}
-                            <div className="apple-card">
-                                <p style={{margin: "7rem 0 0 0.8rem"}}>{card.cardname}</p>
-                                <p style={{margin: "-1.5rem 0 0 2rem"}}>{card.cardnum}</p>
-                            </div>
-                            <div className="card--select">
-                                <button style={{display: "flex"}}>
-                                <Link to={{
-                                    pathname: '/private',
-                                    }}>SELECT THIS CARD TO PAY<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
-                                </button>
-                            </div>
+                                <li className="card--select--li" key={card._id}>{}
+                                    <div className="apple-card">
+                                        <p style={{margin: "7rem 0 0 0.8rem"}}>{card.cardname}</p>
+                                        <p style={{margin: "-1.5rem 0 0 2rem"}}>{card.cardnum}</p>
+                                    </div>
+                                    <div className="card--select">
+                                        <button style={{display: "flex"}}>
+                                        <Link to={{
+                                            pathname: '/private',
+                                            }}>SELECT THIS CARD TO PAY<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
+                                        </button>
+                                    </div>
                                 </li>
                             </div>
-                }) : <>
+                }) :
+                    <>
                     <p>No cards</p>
                     <div className="card--select" style={{display: "flex"}}>
                         <button>
@@ -47,8 +48,7 @@ class Payment extends Component {
                 <Navbar/>
             </div>
         </div>
-       );
-                        
+       );    
     }
 }
 

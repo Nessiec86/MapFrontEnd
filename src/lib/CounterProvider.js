@@ -29,7 +29,6 @@ class CounterProvider extends Component {
     value: 0,
   };
 
-  
   handleDecrease = () => {
     this.setState({
       value: this.state.value - 1,
@@ -44,7 +43,7 @@ class CounterProvider extends Component {
           handleDecrease: this.handleDecrease,
         }}
       >
-        {this.props.children}
+      {this.props.children}
       </Provider>
     );
   }

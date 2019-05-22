@@ -23,11 +23,9 @@ class Auth {
   }
 
   logout() {
-    // this.auth.get("/auth/logout", {})
     return this.auth
       .post("/auth/logout", {})
       .then(response => response.data);
-
   }
 
   me() {
@@ -44,13 +42,13 @@ class Auth {
     return this.auth
       .get('/auth/profile/')
       .then(({data}) => data);
-    }
+  }
 
   update (user) {
     return this.auth
       .put('/auth/profile/edit', user)
       .then(({data}) => data);
-    }
+  }
 }
 
 const auth = new Auth();

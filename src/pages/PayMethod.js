@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 
 class Payment extends Component {
-   
     
   render() {
     const card = this.props.location.state.card
@@ -51,7 +50,6 @@ class Payment extends Component {
         </div>
         </>
        );
-                        
     }
 }
 

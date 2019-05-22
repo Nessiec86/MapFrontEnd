@@ -17,7 +17,6 @@ class WithTicket extends Component {
         })
     }
 
-    
     render () {
         const username = this.props.user.username;
         const tripsRemainig = this.state.trips;

@@ -13,10 +13,11 @@ class Ticket {
       .post("tickets/new")
       .then(({ data }) => data);
   }
+
   read () {
     return this.Ticket
-    .get("tickets/list")
-    .then(({ data }) => data);
+      .get("tickets/list")
+      .then(({ data }) => data);
   }
   
   ticket () {
@@ -33,8 +34,8 @@ class Ticket {
   
   joined () {
     return this.Ticket
-    .get("tickets/joined")
-    .then(({ data }) => data);
+      .get("tickets/joined")
+      .then(({ data }) => data);
   }
 
   delete (ticketId) {

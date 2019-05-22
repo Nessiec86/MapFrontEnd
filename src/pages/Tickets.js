@@ -8,11 +8,13 @@ import { Link } from "react-router-dom";
 
 
 class Tickets extends Component {
+    
     state = {
         list: [],
         card: [],
         status: "loading"
-    }
+    };
+
     componentDidMount(){
         TicketService.read()
             .then((list) => {
@@ -32,23 +34,22 @@ class Tickets extends Component {
                     status: "error"
             });
         });
-    }
+    };
 
 
     handleSelect = (ticketId) => {
         TicketService.join(ticketId)
-        // this.props.history.push("/tickets/pay",)
-    }
+    };
         
     render() {
         const card = this.state.card
         
         switch (this.state.status) {
             case "loading":
-              return <LoadingDots/>;
+                return <LoadingDots/>;
             case "loaded":
-              return (
-                  <div className="myContainer">
+                return (
+                <div className="myContainer">
                     <h1 className="cards-h1">Select your fare</h1>
                     <section className="cards">
                         {this.state.list.map((list, index) => {
@@ -60,22 +61,23 @@ class Tickets extends Component {
                                     <p>{list.tkPrice}€</p>
                                     <div className="card--select">
                                         <button onClick={() => this.handleSelect(list._id)} style={{display: "flex"}}>
-                                        <Link to={{
-                                            pathname: `/tickets/paymethod`,
-                                            state: {
-                                                list,
-                                                card
+                                            <Link to={{
+                                                pathname: `/tickets/paymethod`,
+                                                state: {
+                                                    list,
+                                                    card
                                             }}}>SELECT THIS FARE<img src="../Images/back@3x.png" alt="arrow" style={{margin: "0px 0rem 1px 6px"}}/></Link>
                                         </button>
                                     </div>
                                 </div>
                             </li>
                             </div>  
-                        },)}
+                            })
+                        }
                     </section>
-                <div style={{ margin:'-3.5rem 0 0 0' }}>
-                    <Navbar/>
-                </div>
+                    <div style={{ margin:'-3.5rem 0 0 0' }}>
+                        <Navbar/>
+                    </div>
                 </div>
                 );
             case "error":

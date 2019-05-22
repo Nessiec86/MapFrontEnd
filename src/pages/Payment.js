@@ -6,6 +6,7 @@ import { Form } from "react-bootstrap";
 
 
 class Payment extends Component {
+    
     state = {
         validated: false,
         cardname: "",
@@ -22,6 +23,7 @@ class Payment extends Component {
 
     handleSubmit(event) {
         const form = event.currentTarget;
+    
         if (form.checkValidity() === false) {
             event.stopPropagation();
         } else {
@@ -30,7 +32,7 @@ class Payment extends Component {
             this.props.login({ username, password });
         }
         this.setState({ validated: true });
-    }
+    };
     
       handleChange = event => {
         const { name, value } = event.target;
@@ -41,19 +43,21 @@ class Payment extends Component {
         const ticket = this.props.location.state.ticket 
         const { cardname, cardnum, vadil, controlnum, validated } = this.state;
         const renderTooltip = props => (
+        
             <div
-              {...props}
-              style={{
-                backgroundColor: 'rgba(0, 0, 0, 0.85)',
-                padding: '1rem',
-                color: 'white',
-                borderRadius: 3,
-                ...props.style,
-              }}
+                {...props}
+                style={{
+                    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+                    padding: '1rem',
+                    color: 'white',
+                    borderRadius: 3,
+                    ...props.style,
+                }}
             >
               The card security code is located on the back of MasterCard, Visa, Discover, Diners Club, and JCB credit or debit cards and is typically a separate group of three digits to the right of the signature strip.
             </div>
         );
+
         return (
             <>
             <div className="myContainer-sesion">
@@ -71,12 +75,10 @@ class Payment extends Component {
                     <h2>Configure your payment method</h2>
                     <p>We will renovate automatically your ticket when it is over. You can change your fare & payment method whenever you want or unsuscribe</p>
                 </div>
-
                 <Form
                     noValidate
                     validated={validated}
                     onSubmit={e => this.handleSubmit(e)}
-                    
                 >
                 <Form.Group controlId="validationCustom01" className="sign">
                     <label>Cardholder name:</label>
