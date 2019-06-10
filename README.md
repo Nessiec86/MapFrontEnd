@@ -191,9 +191,9 @@ The URL to your repository and to your deployed project
 
 [Server repository Link](https://github.com/Nessiec86/MapBackEnd)
 
-[Deploy Link Backend](http://heroku.com)
+[Deploy Link Backend](https://smar-t.herokuapp.com/)
 
-[Deploy Link Frontend](http://heroku.com)
+[Deploy Link Frontend](https://smar-t.firebaseapp.com/)
 
 ### Slides
 
